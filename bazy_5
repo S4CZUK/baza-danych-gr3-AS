@@ -1,0 +1,25 @@
+# 1
+insert into infs_saczuka.postac values (default,"Wojciech","wiking","1700-10-23",23);
+insert into infs_saczuka.postac values (default,"Karol","wiking","1700-10-23",23);
+insert into infs_saczuka.ostac values (default,"Filip","wiking","1700-10-23",23);
+insert into infs_saczuka.ostac values (default,"Ragnar","wiking","1700-10-23",23);
+insert into infs_saczuka.ostac values (default,"Ivar","wiking","1700-10-23",23);
+#2
+create table infs_saczuk.astatek ( nazwa varchar(40) primary key, rodzaj enum("zaglowka","motorowka","parowiec"),
+data_wodowania date, max_ladownosc int unsigned);
+#3
+insert into infs_saczuka.statek values ("Eliza","zaglowka","2012-12-12",100);
+insert into infs_saczuka.statek values ("Berta","motorowka","2012-12-12",100);
+#4
+alter table infs_saczuka.postac add (funkcja varchar(40));
+#5
+update infs_saczuka.postac set funkcja="kapitan" where id_postaci=1;
+#6
+alter table infs_saczuka.postac add column statek varchar(50) default null;
+alter table infs_saczuka.postac add foreign key (statek) references statek(nazwa_statku) on delete set null;
+#7
+update infs_saczuka.postac set infs_saczuka.statek="eliza" where name="bjorn";
+#8
+drop from infs_saczuka.izba where nazwa_izby="spizarnia";
+#9
+drop table infs_saczuka.izba;
