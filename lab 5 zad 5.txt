@@ -1,0 +1,13 @@
+
+#a
+update postac set statek=null;
+#b
+delete from postac where nazwa='Drozd';
+#c
+delete from statek;
+#d
+drop table statek;
+#e
+create table zwierz (id int auto_increment primary key ,nazwa varchar(80),wiek int);
+#f
+insert into zwierz select * from postac where rodzaj='ptak' 
